@@ -1,0 +1,21 @@
+{
+  "presets": [
+    "env",
+    "react"
+  ],
+  "plugins": [
+    "transform-decorators-legacy"
+  ],
+  "env": {
+    "test": {
+      "plugins": [
+        "transform-es2015-modules-commonjs"
+      ]
+    },
+    "development": {
+      "presets": [
+        "react-hmre"
+      ]
+    }
+  }
+}
