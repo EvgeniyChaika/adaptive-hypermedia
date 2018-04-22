@@ -3,7 +3,11 @@
   "author": "Evgeniy Chaika",
   "description": "Adaptive Hypermedia",
   "scripts": {
-    "start": "babel-node tools/srcServer.js"
+    "open:src": "babel-node tools/srcServer",
+    "prestart": "babel-node tools/startMessage",
+    "lint": "node_modules/.bin/esw webpack.config.* src tools",
+    "lint:watch": "yarn lint -- --watch",
+    "start": "npm-run-all --parallel open:src lint:watch"
   },
   "version": "1.0.0",
   "license": "MIT",
