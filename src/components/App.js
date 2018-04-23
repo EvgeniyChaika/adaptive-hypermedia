@@ -1,12 +1,13 @@
 import React from 'react';
 // import { PropTypes } from 'prop-types';
 import Routes from '../routes';
+import Header from './header/Header';
 
 class App extends React.Component {
   render() {
     return (
       <div className="container-fluid">
-        <p>Header here...</p>
+        <Header />
         <Routes />
       </div>
     );
