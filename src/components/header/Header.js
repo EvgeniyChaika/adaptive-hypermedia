@@ -5,9 +5,13 @@ class Header extends React.Component {
   render() {
     return (
       <nav>
-        <NavLink to="/" activeClassName="active">Home</NavLink>
+        <NavLink to="/science" activeClassName="active">Наукові рішення</NavLink>
         {' | '}
-        <NavLink to="/about" activeClassName="active">About</NavLink>
+        <NavLink to="/schemas" activeClassName="active">Схеми</NavLink>
+        {' | '}
+        <NavLink to="/navigation" activeClassName="active">Навігаційні правила</NavLink>
+        {' | '}
+        <NavLink to="/result" activeClassName="active">Результат</NavLink>
       </nav>
     );
   }
