@@ -1,12 +1,12 @@
-import webpack from 'webpack';
-import path from 'path';
+const webpack = require('webpack');
+const path = require('path');
 
-export default {
+module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
   entry: [
     'eventsource-polyfill', // necessary for hot reloading with IE
-    'webpack-hot-middleware/client?reload=true', // note that it reloads the page if hot module reloading fails.
+    // 'webpack-hot-middleware/client?reload=true', // note that it reloads the page if hot module reloading fails.
     path.resolve(__dirname, 'src/index')
   ],
   target: 'web',
@@ -16,7 +16,17 @@ export default {
     filename: 'bundle.js'
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'src')
+    host: 'localhost',
+    port: '8888',
+    contentBase: path.resolve(__dirname, 'public'),
+    watchOptions: {
+      aggregateTimeout: 100,
+      ignored: /node_modules/,
+      poll: 500
+    },
+    stats: {
+      warnings: false
+    }
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
