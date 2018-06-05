@@ -1,6 +1,6 @@
 import React from 'react';
 import { Form, Radio, RadioGroup } from 'react-form';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import checkResultObjectBasic from '../../utils';
 
 class SciencePage extends React.Component {
@@ -68,16 +68,16 @@ class SciencePage extends React.Component {
                   <Radio value="eighth" id="radio-eighth" />
                 </label>
               </RadioGroup>
-              <Link to="/science/result" replace>
-                <button type="submit" className="mb-4 btn btn-primary">
-                  Submit
-                </button>
-              </Link>
+              <button type="submit" className="mb-4 btn btn-primary">
+                Submit
+              </button>
             </form>
           )}
         </Form>
         {this.state.result > 50 &&
-        <h4>Advanced</h4>
+        <NavLink to="/results/object" replace>
+          <h4>Advanced</h4>
+        </NavLink>
         }
       </div>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 // import { PropTypes } from 'prop-types';
-import Routes from '../routes';
+import AllRoutes from '../routes';
 import Header from './header/Header';
 
 class App extends React.Component {
@@ -8,7 +8,7 @@ class App extends React.Component {
     return (
       <div className="container-fluid">
         <Header />
-        <Routes />
+        <AllRoutes />
       </div>
     );
   }
