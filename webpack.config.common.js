@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 console.log(`-------NODE_ENV=${process.env.NODE_ENV}-------`);
 
@@ -9,9 +10,14 @@ module.exports = {
     // 'webpack-hot-middleware/client?reload=true', // note that it reloads the page if hot module reloading fails.
     path.resolve(__dirname, 'src/index')
   ],
+  plugins: [
+    new HtmlWebpackPlugin({
+      favicon: 'public/favicon/favicon.ico',
+      template: path.join(__dirname, 'public/index.html')
+    })
+  ],
   output: {
-    path: path.resolve(__dirname, 'public'), // Note: Physical files are only output by the production build task `yarn build`.
-    publicPath: '/',
+    path: path.resolve(__dirname, 'dist'), // Note: Physical files are only output by the production build task `yarn build`.
     filename: 'bundle.js',
     sourceMapFilename: '[file].map'
   },
