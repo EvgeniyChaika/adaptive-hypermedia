@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Radio, RadioGroup } from 'react-form';
-import { Link, NavLink } from 'react-router-dom';
-import checkResultObjectBasic from '../../utils';
+import { NavLink } from 'react-router-dom';
+import { checkResultObjectBasic } from '../../utils';
 
 class SciencePage extends React.Component {
   state = {
