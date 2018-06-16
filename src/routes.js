@@ -10,12 +10,13 @@ import ScienceSubmitResult from './components/science/submitResult/ScienceSubmit
 const AllRoutes = () => (
   <main>
     <Switch>
-      <Route exact path="/" component={HomePage} />
+      <Redirect exact from="/" to="/science" />
       <Route path="/science" component={SciencePage} />
       <Route path="/results/object" component={ScienceSubmitResult} /> TODO
       <Route path="/schemas" component={SchemasPage} />
       <Route path="/navigation" component={NavigationRulesPage} />
       <Route path="/result" component={ResultPage} />
+      <Redirect to="/" />
     </Switch>
   </main>
 );
