@@ -1,6 +1,5 @@
 import React from 'react';
-import { Form, Radio, RadioGroup } from 'react-form';
-import { NavLink } from 'react-router-dom';
+import { Circle } from 'react-shapes';
 import { checkResultObjectBasic } from '../../utils';
 
 class SciencePage extends React.Component {
@@ -20,65 +19,29 @@ class SciencePage extends React.Component {
   render() {
     return (
       <div className="jumbotron">
-        <h3>Пример</h3>
-        <h3>Назовите методы класса Object: </h3>
-
-        <Form onSubmit={this.submitHandler}>
-          {formApi => (
-            <form onSubmit={formApi.submitForm} id="radio-input-form">
-              <RadioGroup field="submittedValueBasic">
-                <label htmlFor="radio-first" className="mr-2">
-                  1) clone, equals(Object obj), finalize, getClass, hashCode, notify, notifyAll,
-                  toString, wait, wait(long millis), wait(long millis, int nanos)
-                  <Radio value="first" id="radio-first" />
-                </label>
-                <label htmlFor="radio-second" className="mr-2">
-                  2) clone, equals(Object obj), finalize, getClass, hashCode, notify, notifyAll,
-                  toString, wait, wait(long millis), wait(int nanos)
-                  <Radio value="second" id="radio-second" />
-                </label>
-                <label htmlFor="radio-third" className="mr-2">
-                  3) clone, equals(Object obj), finalize, getClass, hashCode, notify, notifyAll,
-                  toString, wait, wait(long millis), wait(int nanos)
-                  <Radio value="third" id="radio-third" />
-                </label>
-                <label htmlFor="radio-fourth" className="mr-2">
-                  4) clone, equals(Object obj), finalize, getClass, hashCode, notify, notifyAll,
-                  toString, wait, wait(long millis), wait(int nanos)
-                  <Radio value="fourth" id="radio-fourth" />
-                </label>
-                <label htmlFor="radio-fifth" className="mr-2">
-                  5) clone, equals(Object obj), finalize, getClass, hashCode, notify, notifyAll,
-                  toString, wait, wait(long millis), wait(int nanos)
-                  <Radio value="fifth" id="radio-fifth" />
-                </label>
-                <label htmlFor="radio-sixth" className="mr-2">
-                  6) clone, equals(Object obj), finalize, getClass, hashCode, notify, notifyAll,
-                  toString, wait, wait(long millis), wait(int nanos)
-                  <Radio value="sixth" id="radio-sixth" />
-                </label>
-                <label htmlFor="radio-seventh" className="mr-2">
-                  7) clone, equals(Object obj), finalize, getClass, hashCode, notify, notifyAll,
-                  toString, wait, wait(long millis), wait(int nanos)
-                  <Radio value="seventh" id="radio-seventh" />
-                </label>
-                <label htmlFor="radio-eighth" className="mr-2">
-                  8) clone, equals(Object obj), finalize, getClass, hashCode, notify, notifyAll,
-                  toString, wait, wait(long millis), wait(int nanos)
-                  <Radio value="eighth" id="radio-eighth" />
-                </label>
-              </RadioGroup>
-              <button type="submit" className="mb-4 btn btn-primary">
-                Submit
-              </button>
-            </form>
-          )}
-        </Form>
-        {this.state.result > 50 &&
-        <NavLink to="/results/object" replace>
-          <h4>Advanced</h4>
-        </NavLink>
-        }
+        <h3>Класифікація вузлів:</h3>
+        <div>
+          <div style={{ height: 30 }}>
+            <Circle r={8} fill={{ color: '#80b3ff' }} />
+            <span style={{ height: '100%', margin: '0 auto' }}> A - вузли з питанням (тестовим завданням)</span>
+          </div>
+          <div style={{ height: 30 }}>
+            <Circle r={8} fill={{ color: '#8cd9b3' }} />
+            <span style={{ height: '100%', margin: '0 auto' }}> B - вузли, що містять інформацію для правильної відповіді учня</span>
+          </div>
+          <div style={{ height: 30 }}>
+            <Circle r={8} fill={{ color: '#ff9999' }} />
+            <span style={{ height: '100%', margin: '0 auto' }}> C - вузли з інформацією для неправильної відповіді учня</span>
+          </div>
+          <div style={{ height: 30 }}>
+            <Circle r={8} fill={{ color: '#d6d6c2' }} />
+            <span style={{ height: '100%', margin: '0 auto' }}> D - вузли з поясненням для студентів з низьким рівнем знань</span>
+          </div>
+          <div style={{ height: 30 }}>
+            <Circle r={8} fill={{ color: '#ffb366' }} />
+            <span style={{ height: '100%', margin: '0 auto' }}> E - вузли з поясненням для студентів з високим рівнем знань</span>
+          </div>
+        </div>
       </div>
     );
   }

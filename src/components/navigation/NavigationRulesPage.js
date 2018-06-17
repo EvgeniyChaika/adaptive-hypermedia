@@ -1,10 +1,15 @@
 import React from 'react';
+import { userRules } from '../../consts';
 
 class NavigationRulesPage extends React.Component {
   render() {
     return (
       <div className="jumbotron">
-        <h1>Навігаційні правила</h1>
+        <div>
+          <h3>Загальне користувальницьке правило</h3>
+          <p>{userRules.D}</p>
+          <p>{userRules.E}</p>
+        </div>
       </div>
     );
   }

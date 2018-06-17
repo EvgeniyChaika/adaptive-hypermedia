@@ -1,8 +1,8 @@
 #app {
-    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font: 18px 'Helvetica Neue', Helvetica, Arial, sans-serif;
     color: #4d4d4d;
     min-width: 550px;
-    max-width: 850px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -12,4 +12,12 @@ a.active {
 
 nav {
     padding-top: 20px;
+}
+
+p {
+    font-size: 22px;
+}
+
+.jumbotron {
+    padding-top: 10px;
 }
