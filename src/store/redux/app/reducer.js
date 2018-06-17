@@ -1,11 +1,6 @@
 import Immutable from 'seamless-immutable';
-import { createAction } from '../../utils';
+import { APPLICATION_INIT_START } from './actions';
 
-const APPLICATION_INIT_START = 'app/APPLICATION_INIT_START';
-
-export const appActions = {
-  appInitialization: createAction(APPLICATION_INIT_START),
-};
 
 const initState = Immutable.from({
   initialized: false
@@ -14,7 +9,7 @@ const initState = Immutable.from({
 export default function reducer(state = initState, action) {
   switch (action.type) {
     case APPLICATION_INIT_START: return state
-      .set('initialized', true);
+      .set('initialized', action.payload);
     default: return state;
   }
 }
