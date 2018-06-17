@@ -7,8 +7,8 @@ import { Provider } from 'react-redux';
 import App from './components/App';
 import appStore from './store/appStore';
 
-import './styles/styles.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import './styles/styles.css';
 
 render(
   (

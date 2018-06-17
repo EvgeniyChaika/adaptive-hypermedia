@@ -1,11 +1,14 @@
 import React from 'react';
 import { Graph } from 'react-d3-graph';
+import Select from 'react-select';
+
 import { graphConfig, graphData } from './../../consts';
 
 
 class SchemasPage extends React.Component {
   state = {
-    actionDescription: ''
+    actionDescription: '',
+    selectedOption: ''
   };
 
   onClickNode = (nodeId) => {
@@ -32,16 +35,35 @@ class SchemasPage extends React.Component {
     this.setState({ actionDescription: `Mouse out link between ${source} and ${target}` });
   };
 
+  handleChange = (selectedOption) => {
+    console.log(selectedOption);
+    this.setState({ selectedOption });
+  };
+
   render() {
     return (
       <div className="jumbotron">
         <div style={{ overflow: 'auto' }}>
           <div style={{
             float: 'left',
-            height: 813,
+            height: 800,
             width: 440
           }}>
             <h4>Схеми</h4>
+            <div>
+              <Select
+                name="form-field-name" /* TODO */
+                value={this.state.selectedOption}
+                onChange={this.handleChange}
+                options={[
+                  { value: 'A', label: 'A' },
+                  { value: 'B', label: 'B' },
+                  { value: 'C', label: 'C' },
+                  { value: 'D', label: 'D' },
+                  { value: 'E', label: 'E' }
+                ]}
+              />
+            </div>
           </div>
           <div style={{ float: 'right' }}>
             <h4>Приклад графу</h4>
