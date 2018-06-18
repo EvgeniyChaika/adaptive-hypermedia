@@ -4,8 +4,8 @@ const userRules = {
 };
 
 const graphConfig = {
-  height: 350,
-  width: 420,
+  height: 550,
+  width: 440,
   nodeHighlightBehavior: true,
   staticGraph: true,
   node: {

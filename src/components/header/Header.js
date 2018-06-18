@@ -9,7 +9,7 @@ class Header extends React.Component {
         {' | '}
         <NavLink to="/schemas" activeClassName="active">Створення схеми навігації</NavLink>
         {' | '}
-        <NavLink to="/navigation" activeClassName="active">Навігаційні правила</NavLink>
+        <NavLink to="/navigation" activeClassName="active">Формати навігаційних правил</NavLink>
       </nav>
     );
   }
