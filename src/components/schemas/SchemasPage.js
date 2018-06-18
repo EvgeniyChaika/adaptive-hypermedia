@@ -3,26 +3,15 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { Graph } from 'react-d3-graph';
 
-import { graphConfig, graphData } from './../../consts';
+import { graphConfig } from './../../consts';
 import graphActions from '../../store/redux/graph/actions';
 import { createGraphLink, createGraphNode } from '../../utils';
-
-const options1 = [
-  'Select node',
-  'A 0'
-];
-const options2 = [
-  'Select node',
-  'B 1',
-  'C 2'
-];
 
 const initialState = {
   actionDescription: '',
   overallNavigationRule: '',
   sourceNode: '',
   targetNode: '',
-  firstSelect: true,
   disabledButtonAddNode: true,
   disabledButtonFinishGraph: true,
   showGraphProperties: false,
@@ -81,27 +70,32 @@ class SchemasPage extends React.Component {
   };
 
   onAddNode = () => {
-    const { sourceNode, targetNode, firstSelect, nodePosition } = this.state;
+    const { sourceNode, targetNode, nodePosition } = this.state;
+
     const nodes = [];
     const sourceNode1 = createGraphNode(sourceNode);
     nodes.push(sourceNode1);
-    if (firstSelect) {
-      const sourceNode2 = createGraphNode(targetNode);
-      nodes.push(sourceNode2);
-    }
+    const sourceNode2 = createGraphNode(targetNode);
+    nodes.push(sourceNode2);
+
     const link = createGraphLink(sourceNode, targetNode);
     this.props.graphAddNode({ nodes, link });
     this.setState({
-      disabledButtonAddNode: true,
       disabledButtonFinishGraph: false,
       nodePosition: nodePosition + 1,
-      firstSelect: false,
-      disabledSelectNode: true
+      sourceNode: '',
+      targetNode: '',
+      disabledButtonAddNode: true
     });
   };
 
   onFinishGraph = () => {
-    this.setState({ showGraphProperties: true, disabledButtonFinishGraph: true, disabledSelectNode: true });
+    this.setState({
+      showGraphProperties: true,
+      disabledButtonFinishGraph: true,
+      disabledSelectNode: true,
+      disabledButtonAddNode: true
+    });
   };
 
   onResetGraph = () => {
@@ -110,7 +104,8 @@ class SchemasPage extends React.Component {
   };
 
   render() {
-    const graphHasNodes = this.props.graph.nodes.length > 0;
+    const { nodes } = this.props.graph;
+    const graphHasTwoNodes = nodes.length > 1;
     return (
       <div className="jumbotron" style={{ paddingBottom: 10 }}>
         <div style={{ overflow: 'auto' }}>
@@ -131,7 +126,7 @@ class SchemasPage extends React.Component {
                       className="form-control"
                     >
                       <option value="" hidden>Вибрати начальний вузол</option>
-                      <option value={`A ${this.state.nodePosition}`}>{`A ${this.state.nodePosition}`}</option>
+                      {nodes.map(option => <option value={option.id} key={option.id}>{option.id}</option>)}
                     </select>
                   </div>
                 </div>
@@ -208,7 +203,7 @@ class SchemasPage extends React.Component {
             width: 440
           }}>
             <h4>Граф створенної навігації</h4>
-            {graphHasNodes &&
+            {graphHasTwoNodes &&
             <Graph
               id="graph-id" // id is mandatory, if no id is defined rd3g will throw an error
               data={this.props.graph}

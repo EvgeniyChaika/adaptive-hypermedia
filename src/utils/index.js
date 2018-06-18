@@ -25,6 +25,20 @@ const getNodeData = (nodeIndex) => {
         y: 120,
         color: '#db5e5e'
       };
+    case 'B 2':
+      return {
+        id: nodeIndex,
+        x: 200,
+        y: 120,
+        color: '#8cd9b3'
+      };
+    case 'C 2':
+      return {
+        id: nodeIndex,
+        x: 200,
+        y: 120,
+        color: '#db5e5e'
+      };
     default:
       return defaultNode;
   }
