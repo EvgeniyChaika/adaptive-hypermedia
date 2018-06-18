@@ -1,21 +1,7 @@
 import React from 'react';
 import { Circle } from 'react-shapes';
-import { checkResultObjectBasic } from '../../utils';
 
 class SciencePage extends React.Component {
-  state = {
-    submittedValueBasic: '',
-    result: 0
-  };
-
-  submitHandler = ({ submittedValueBasic }) => {
-    this.setState({ submittedValueBasic });
-    const result = checkResultObjectBasic(this.state.submittedValueBasic);
-    console.log(this.state.submittedValueBasic);
-    this.setState({ result });
-    console.log(this.state.result);
-  };
-
   render() {
     return (
       <div className="jumbotron">
