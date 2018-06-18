@@ -27,7 +27,7 @@ const initialState = {
   disabledButtonFinishGraph: true,
   showGraphProperties: false,
   disabledSelectNode: false,
-  nodesCount: 0
+  nodePosition: 0
 };
 
 class SchemasPage extends React.Component {
@@ -40,10 +40,9 @@ class SchemasPage extends React.Component {
   state = { ...initialState };
 
   onClickNode = (nodeId) => {
-    console.log(nodeId);
     this.setState({
       actionDescription: ``,
-      overallNavigationRule: `Вузол ${nodeId} має навігаційне правило - ASDSS=7`
+      overallNavigationRule: `Вузол ${nodeId} має навігаційне правило - ${nodeId + nodeId + nodeId}`
     });
   };
 
@@ -82,17 +81,23 @@ class SchemasPage extends React.Component {
   };
 
   onAddNode = () => {
+    const { sourceNode, targetNode, firstSelect, nodePosition } = this.state;
     const nodes = [];
-    const sourceNode1 = createGraphNode(this.state.sourceNode);
+    const sourceNode1 = createGraphNode(sourceNode);
     nodes.push(sourceNode1);
-    if (this.state.firstSelect) {
-      const sourceNode2 = createGraphNode(this.state.targetNode);
+    if (firstSelect) {
+      const sourceNode2 = createGraphNode(targetNode);
       nodes.push(sourceNode2);
-      this.setState({ firstSelect: false });
     }
-    const link = createGraphLink(this.state.sourceNode, this.state.targetNode);
+    const link = createGraphLink(sourceNode, targetNode);
     this.props.graphAddNode({ nodes, link });
-    this.setState({ disabledButtonAddNode: true, disabledButtonFinishGraph: false });
+    this.setState({
+      disabledButtonAddNode: true,
+      disabledButtonFinishGraph: false,
+      nodePosition: nodePosition + 1,
+      firstSelect: false,
+      disabledSelectNode: true
+    });
   };
 
   onFinishGraph = () => {
@@ -126,11 +131,7 @@ class SchemasPage extends React.Component {
                       className="form-control"
                     >
                       <option value="" hidden>Вибрати начальний вузол</option>
-                      <option value="A">{`A ${this.state.nodesCount}`}</option>
-                      <option value="B">B</option>
-                      <option value="C">C</option>
-                      <option value="D">D</option>
-                      <option value="E">E</option>
+                      <option value={`A ${this.state.nodePosition}`}>{`A ${this.state.nodePosition}`}</option>
                     </select>
                   </div>
                 </div>
@@ -147,11 +148,8 @@ class SchemasPage extends React.Component {
                       className="form-control"
                     >
                       <option value="" hidden>Вибрати кінцевий вузол</option>
-                      <option value="A">A</option>
-                      <option value="B">B</option>
-                      <option value="C">C</option>
-                      <option value="D">D</option>
-                      <option value="E">E</option>
+                      <option value={`B ${this.state.nodePosition + 1}`}>{`B ${this.state.nodePosition + 1}`}</option>
+                      <option value={`C ${this.state.nodePosition + 1}`}>{`C ${this.state.nodePosition + 1}`}</option>
                     </select>
                   </div>
                 </div>
