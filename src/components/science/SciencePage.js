@@ -16,11 +16,11 @@ class SciencePage extends React.Component {
             <span style={{ height: '100%', margin: '0 auto' }}> B - вузли, що містять інформацію для правильної відповіді учня</span>
           </div>
           <div style={{ height: 30 }}>
-            <Circle r={8} fill={{ color: '#ff9999' }} />
+            <Circle r={8} fill={{ color: '#db5e5e' }} />
             <span style={{ height: '100%', margin: '0 auto' }}> C - вузли з інформацією для неправильної відповіді учня</span>
           </div>
           <div style={{ height: 30 }}>
-            <Circle r={8} fill={{ color: '#d6d6c2' }} />
+            <Circle r={8} fill={{ color: '#7a6565' }} />
             <span style={{ height: '100%', margin: '0 auto' }}> D - вузли з поясненням для студентів з низьким рівнем знань</span>
           </div>
           <div style={{ height: 30 }}>
