@@ -9,10 +9,10 @@ class SciencePage extends React.Component {
           <div style={{ float: 'left' }}>
             <h5>Модель:</h5>
             <div>
-              <p>- учня М1</p>
-              <p>- навчання М2</p>
-              <p>- пояснення М3</p>
-              <p>- еталонний курс Мe</p>
+              <p>- учня <item>M<sub>1</sub></item></p>
+              <p>- навчання <item>M<sub>2</sub></item></p>
+              <p>- пояснення <item>M<sub>3</sub></item></p>
+              <p>- еталонний курс <item>M<sub>e</sub></item></p>
             </div>
           </div>
           <div style={{ float: 'right' }}>

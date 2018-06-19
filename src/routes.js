@@ -4,6 +4,7 @@ import SciencePage from './components/science/SciencePage';
 import SchemasPage from './components/schemas/SchemasPage';
 import NavigationRulesPage from './components/navigation/NavigationRulesPage';
 import ResultPage from './components/result/ResultPage';
+import Demo from './components/demo/Demo';
 
 const AllRoutes = () => (
   <main>
@@ -13,6 +14,7 @@ const AllRoutes = () => (
       <Route path="/schemas" component={SchemasPage} />
       <Route path="/navigation" component={NavigationRulesPage} />
       <Route path="/result" component={ResultPage} />
+      <Route path="/demo" component={Demo} />
       <Redirect to="/" />
     </Switch>
   </main>

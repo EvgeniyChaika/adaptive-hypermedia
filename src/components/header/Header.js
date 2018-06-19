@@ -5,11 +5,15 @@ class Header extends React.Component {
   render() {
     return (
       <nav>
-        <NavLink to="/science" activeClassName="active">Наукові рішення</NavLink>
-        {' | '}
-        <NavLink to="/schemas" activeClassName="active">Створення схеми навігації</NavLink>
+        <NavLink to="/science" activeClassName="active">Визначення вузлів</NavLink>
         {' | '}
         <NavLink to="/navigation" activeClassName="active">Формати навігаційних правил</NavLink>
+        {' | '}
+        <NavLink to="/schemas" activeClassName="active">Схема навігації</NavLink>
+        {' | '}
+        <NavLink to="/result" activeClassName="active">Результат</NavLink>
+        {' | '}
+        <NavLink to="/demo" activeClassName="active">Приклад реалізації</NavLink>
       </nav>
     );
   }
