@@ -20,7 +20,7 @@ class NavigationRulesPage extends React.Component {
             <item>P<sub>m1</sub></item>
             &and;
             <item>P<sub>mh</sub></item>
-            {')-> '}
+            )&nbsp;&rarr;&nbsp;
             <item>M<sub>2</sub></item>
             (
             <item>P<sub>1</sub></item>
@@ -44,7 +44,7 @@ class NavigationRulesPage extends React.Component {
             <item>P<sub>m1</sub></item>
             &and;
             <item>P<sub>mh</sub></item>
-            {')-> S('}
+            )&nbsp;&rarr;&nbsp;S(
             <item>D<sub>1</sub></item>
             &and;...&and;
             <item>D<sub>n</sub></item>
@@ -57,7 +57,7 @@ class NavigationRulesPage extends React.Component {
             <item>M<sub>1</sub></item>
             , <item>M<sub>e</sub></item>)#
             <item>e<sub>2</sub></item>
-            {' -> '}
+            &nbsp;&rarr;&nbsp;
             <item>M<sub>2</sub></item>
             (
             <item>P<sub>1</sub></item>
@@ -72,7 +72,7 @@ class NavigationRulesPage extends React.Component {
             <item>M<sub>li</sub></item>
             , <item>M<sub>ei</sub></item>)#
             <item>e<sub>2</sub></item>
-            {' -> S('}
+            &nbsp;&rarr;&nbsp;S(
             <item>D<sub>1</sub></item>
             &and;...&and;
             <item>D<sub>n</sub></item>

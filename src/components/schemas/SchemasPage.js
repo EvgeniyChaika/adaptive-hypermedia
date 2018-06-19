@@ -40,19 +40,19 @@ class SchemasPage extends React.Component {
                 {'0 < S('}
                 <item>M<sub>li</sub></item>
                 , <item>M<sub>ei</sub></item>
-                {') < 0.5 -> D7'}
+                {') < 0.5'}&nbsp;&rarr;&nbsp;D7
               </p>
               <p style={{ color: 'blue', marginTop: 10 }}>
-                {'0.5 <= S('}
+                0.5&nbsp;&le;&nbsp;S(
                 <item>M<sub>li</sub></item>
                 , <item>M<sub>ei</sub></item>
-                {') <= 1 -> E8'}
+                )&nbsp;&le;&nbsp;1&nbsp;&rarr;&nbsp;E8
               </p>
             </div>
             <div style={{ marginTop: 20 }}>
               <h5>Навігаційне правило вузла:</h5>
-              <p style={{ color: 'blue' }}>{' A'}&and;{'C'}&and;{'A -> D7'}</p>
-              <p style={{ color: 'blue', marginTop: 10 }}>{' A'}&and;{'B'}&and;{'A -> E8'}</p>
+              <p style={{ color: 'blue' }}>&nbsp;A&and;{'C'}&and;A&nbsp;&rarr;&nbsp;D7</p>
+              <p style={{ color: 'blue', marginTop: 10 }}>&nbsp;A&and;B&and;A&nbsp;&rarr;&nbsp;E8</p>
             </div>
           </div>
           <div style={{

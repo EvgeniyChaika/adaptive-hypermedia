@@ -1,15 +1,23 @@
 import Immutable from 'seamless-immutable';
-import { USER_SET_INITIAL_STATE } from './actions';
+import { USER_SET_INITIAL_STATE, USER_SET_TEST_RESULT_TYPES } from './actions';
 
 
-const initState = Immutable.from({
-  overallLevel: 0
+const initialState = Immutable.from({
+  userModel: {
+    overallLevel: 0,
+    testTypes: 0
+  }
 });
 
-export default function reducer(state = initState, action) {
+export default function reducer(state = initialState, action) {
   switch (action.type) {
-    case USER_SET_INITIAL_STATE: return state
-      .set('overallLevel', action.payload);
-    default: return state;
+    case USER_SET_INITIAL_STATE:
+      return state
+        .setIn(['userModel', 'overallLevel'], action.payload);
+    case USER_SET_TEST_RESULT_TYPES:
+      return state
+        .setIn(['userModel', 'testTypes'], action.payload);
+    default:
+      return state;
   }
 }
