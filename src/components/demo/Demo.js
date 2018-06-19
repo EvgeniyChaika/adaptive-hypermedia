@@ -33,7 +33,7 @@ class Demo extends React.Component {
     return (
       <div className="jumbotron">
         <div style={{ overflow: 'auto' }}>
-          <div style={{ float: 'left', width: 550, overflowWrap: 'break-word' }}>
+          <div style={{ float: 'left', width: 550, overflowWrap: 'break-word', borderRight: '1px solid brown' }}>
             <h4>Тест 1</h4>
             <h5>Назвіть типи даних в мові програмування JavaScript</h5>
             <Form onSubmit={this.submitHandler}>
@@ -72,17 +72,17 @@ class Demo extends React.Component {
               )}
             </Form>
           </div>
-          <div style={{ float: 'right', width: 350 }}>
+          <div style={{ float: 'right', width: 350, paddingLeft: 20 }}>
             <div>
               <h4>Модель користувача:</h4>
-              <p>- загальний рівень</p>
-              <p>{this.props.userModel.overallLevel}</p>
-              <p>- результат тесту {'\'Типи даних в мові програмування JavaScript\''}</p>
-              <p>{this.props.userModel.testTypes}</p>
+              <p style={{ marginBottom: 10 }}>- загальний рівень</p>
+              <p style={{ marginBottom: 10 }}>{this.props.userModel.overallLevel}</p>
+              <p style={{ marginBottom: 10 }}>- результат тесту {'\'Типи даних в мові програмування JavaScript\''}</p>
+              <p style={{ marginBottom: 10 }}>{this.props.userModel.testTypes}</p>
             </div>
             <div>
               <h4>Навігаційний шлях:</h4>
-              <p>{this.state.navigationPath}</p>
+              <p style={{ marginBottom: 10 }}>{this.state.navigationPath}</p>
             </div>
           </div>
         </div>
