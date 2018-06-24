@@ -6,13 +6,13 @@ class SciencePage extends React.Component {
     return (
       <div className="jumbotron">
         <div style={{ overflow: 'auto' }}>
-          <div style={{ float: 'left', marginLeft: 70 }}>
-            <h5>Модель:</h5>
+          <div style={{ float: 'left', marginLeft: 70, marginTop: 30 }}>
+            <h4>Модель:</h4>
             <div>
-              <p>- учня <item>M<sub>1</sub></item></p>
-              <p>- навчання <item>M<sub>2</sub></item></p>
-              <p>- пояснення <item>M<sub>3</sub></item></p>
-              <p>- еталонний курс <item>M<sub>e</sub></item></p>
+              <h5>- учня <item>M<sub>1</sub></item></h5>
+              <h5>- навчання <item>M<sub>2</sub></item></h5>
+              <h5>- пояснення <item>M<sub>3</sub></item></h5>
+              <h5>- еталонний курс <item>M<sub>e</sub></item></h5>
             </div>
           </div>
           <div style={{ float: 'right', marginRight: 70 }}>

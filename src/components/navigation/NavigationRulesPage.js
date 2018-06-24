@@ -78,32 +78,35 @@ class NavigationRulesPage extends React.Component {
             <item>D<sub>n</sub></item>
             )
           </p>
-          <p style={{ marginTop: 25, marginLeft: 15 }}>
-            де <span style={{ color: 'blue' }}><item>P<sub>i</sub></item></span> - дидактичний предикат множини
-            <span style={{ color: 'blue' }}> M</span>;
-          </p>
-          <p style={{ marginTop: 10, marginLeft: 15 }}>
-            <span style={{ color: 'blue' }}>D</span> - ідентифікатор узла, інформація якого буде показана користувачеві в рамках генерації
-            стратегії навчання;
-          </p>
-          <p style={{ marginTop: 10, marginLeft: 15 }}>
-            <span style={{ color: 'blue' }}>h</span> - кількість історій, які були задіяні в моделі користувача
-            <span style={{ color: 'blue' }}><item> M<sub>1</sub></item></span>;
-          </p>
-          <p style={{ marginTop: 10, marginLeft: 15 }}>
-            <span style={{ color: 'blue' }}>m</span> - кількість образів шляху, кількість ідентифікаторів вузлів, які будуть
-            показані {'суб\'єкту'} навчання згідно з <span style={{ color: 'blue' }}><item>M<sub>e</sub></item></span>;
-          </p>
-          <p style={{ marginTop: 10, marginLeft: 15 }}>
-            <span style={{ color: 'blue' }}>S(<item>M<sub>li</sub></item>, <item>M<sub>ei</sub></item>)</span> - параметр ступеня
-            толерантності на <span style={{ color: 'blue' }}>i-</span>м
-            кроці, <span style={{ color: 'blue' }}>е</span> - межа ступені
-            толерантності в межах від 0 до 1;
-          </p>
-          <p style={{ marginTop: 10, marginLeft: 15 }}>
-            <span style={{ color: 'blue' }}>#</span> - операція, яка представляється одним з наступних трьох логічних
-            операторів: {'\'<\''}, {'\'<=\''} або {'\'=\''};
-          </p>
+          <p style={{ marginTop: 25, marginLeft: 15 }}>де</p>
+          <div style={{ marginLeft: 25 }}>
+            <p style={{ marginTop: 10, marginLeft: 15 }}>
+              <span style={{ color: 'blue' }}><item>P<sub>i</sub></item></span> - дидактичний предикат множини
+              <span style={{ color: 'blue' }}> M</span>;
+            </p>
+            <p style={{ marginTop: 10, marginLeft: 15 }}>
+              <span style={{ color: 'blue' }}>D</span> - ідентифікатор узла, інформація якого буде показана користувачеві в рамках генерації
+              стратегії навчання;
+            </p>
+            <p style={{ marginTop: 10, marginLeft: 15 }}>
+              <span style={{ color: 'blue' }}>h</span> - кількість історій, які були задіяні в моделі користувача
+              <span style={{ color: 'blue' }}><item> M<sub>1</sub></item></span>;
+            </p>
+            <p style={{ marginTop: 10, marginLeft: 15 }}>
+              <span style={{ color: 'blue' }}>m</span> - кількість образів шляху, кількість ідентифікаторів вузлів, які будуть
+              показані {'суб\'єкту'} навчання згідно з <span style={{ color: 'blue' }}><item>M<sub>e</sub></item></span>;
+            </p>
+            <p style={{ marginTop: 10, marginLeft: 15 }}>
+              <span style={{ color: 'blue' }}>S(<item>M<sub>li</sub></item>, <item>M<sub>ei</sub></item>)</span> - параметр ступеня
+              толерантності на <span style={{ color: 'blue' }}>i-</span>м
+              кроці, <span style={{ color: 'blue' }}>е</span> - межа ступені
+              толерантності в межах від 0 до 1;
+            </p>
+            <p style={{ marginTop: 10, marginLeft: 15 }}>
+              <span style={{ color: 'blue' }}>#</span> - операція, яка представляється одним з наступних трьох логічних
+              операторів: {'\'<\''}, {'\'<=\''} або {'\'=\''};
+            </p>
+          </div>
         </div>
       </div>
     );
