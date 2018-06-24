@@ -40,10 +40,10 @@ class SchemasPage extends React.Component {
                 {'0 < S('}
                 <item>M<sub>li</sub></item>
                 , <item>M<sub>ei</sub></item>
-                {') < 0.5'}&nbsp;&rarr;&nbsp;D7
+                {') < 0.8'}&nbsp;&rarr;&nbsp;D7
               </p>
               <p style={{ color: 'blue', marginTop: 10 }}>
-                0.5&nbsp;&le;&nbsp;S(
+                0.8&nbsp;&le;&nbsp;S(
                 <item>M<sub>li</sub></item>
                 , <item>M<sub>ei</sub></item>
                 )&nbsp;&le;&nbsp;1&nbsp;&rarr;&nbsp;E8
